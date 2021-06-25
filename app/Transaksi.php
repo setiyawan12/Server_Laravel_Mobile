@@ -10,7 +10,7 @@ class Transaksi extends Model
         'user_id', 'kode_payment',
         'kode_trx', 'total_item', 'total_harga', 'kode_unik',
         'status', 'resi', 'kurir', 'name', 'phone', 'detail_lokasi', 'metode',
-        'deskripsi', 'expired_at'
+        'deskripsi', 'expired_at','jasa_pengiriaman', 'ongkir', 'total_transfer', 'bank'
     ];
 
     public function details()
