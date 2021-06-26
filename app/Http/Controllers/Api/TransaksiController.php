@@ -87,6 +87,24 @@ class TransaksiController extends Controller
             $this->error('Transaksi gagal');
         }
     }
+    public function batal($id){
+        $transaksi = Transaksi::where('id', $id)->first();
+        if ($transaksi){
+            // update data
+
+            $transaksi->update([
+                'status' => "BATAL"
+            ]);
+
+            return response()->json([
+                'success' => 1,
+                'message' => 'Berhasil',
+                'transaksi' => $transaksi
+            ]);
+        } else {
+            return $this->error('Gagal memuat transaksi');
+        }
+    }
     public function error($pesan) {
         return response()->json([
             'success' => 0,
