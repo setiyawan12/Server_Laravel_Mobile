@@ -9,7 +9,7 @@ class TransaksiController extends Controller
     public function index(){
         $transaksiPading['listPanding'] = Transaksi::whereStatus("MENUNGGU")->get();
 
-        $transaksiSelesai['listDone'] = Transaksi::where("Status", "NOT LIKE", "%MENUNGGU%")->get();
+        $transaksiSelesai['listDone'] = Transaksi::where("status", "NOT LIKE", "%MENUNGGU%")->get();
 
         return view('transaksi')->with($transaksiPading)->with($transaksiSelesai);
     }
