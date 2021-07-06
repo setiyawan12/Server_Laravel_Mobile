@@ -38,16 +38,7 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-        // $fileName = '';
-        // if($request->image->getClientOriginalName()){
-        //     $file = str_replace(' ', '', $request->image->getClientOriginalName());
-        //     $fileName = date('mYdHs').rand(1,999).'_'.$file;
-        //     $request->image->storeAs('public/produk', $fileName);
-        // }
-        //  $user = Produk::create(array_merge($request->all(), [
-        //      'image' =>$fileName
-        // ]));
-        // return redirect('produk');
+        //push image to couldynary
         $fileName = Carbon::now()->format('Y-m-d H:i:s').'-'.$request->name;
         $uploadedFile = $request->file('image')->storeOnCloudinaryAs('MyProduk',$fileName);
         $image = $uploadedFile->getSecurePath();
@@ -58,8 +49,6 @@ class ProdukController extends Controller
              'public_id'=>$public_id,
         ]));
         return redirect('produk');
-
-
     }
 
     /**
