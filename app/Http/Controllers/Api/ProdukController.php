@@ -12,9 +12,9 @@ class ProdukController extends Controller
         $produk = Produk::all();
         return response()->json(
             [
-                'success' => 1,
+                'success' => true,
                 'message' => 'Get Produk Berhasil',
-                'produks' => $produk
+                'data' => $produk
             ]
             );
     }
