@@ -14,7 +14,7 @@ class ProdukController extends Controller
             [
                 'success' => true,
                 'message' => 'Get Produk Berhasil',
-                'data' => $produk
+                'produks' => $produk
             ]
             );
     }
